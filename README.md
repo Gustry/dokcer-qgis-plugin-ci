@@ -15,6 +15,10 @@ docker run
 
 We use `-u` because we don't want the file owned by root.
 
+### Upgrade
+
+Change versions in `Dockerfile` and `Makefile`.
+
 ### Source code
 
 Based on :
