@@ -1,7 +1,11 @@
 ### Docker image for QGIS-Plugin-CI
 
-Example running on GitLab-CI to generate the package and get the custom `plugins.xml` file :
+Documentation of [QGIS-Plugin-CI](https://opengisch.github.io/qgis-plugin-ci/).
+This docker project is just a docker image on top of this Python project.
 
+Example to generate the package and get the custom `plugins.xml` file :
+
+Using plain `docker run` command :
 ```bash
 docker run
   --rm -w /plugin
@@ -13,7 +17,18 @@ docker run
   --plugin-repo-url https://custom.server.url/
 ```
 
-We use `-u` because we don't want the file owned by root.
+We use `-u` because we don't want the file to be owned by root.
+
+Or using `image` from GitLab-ci, [doc](https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#define-image-in-the-gitlab-ciyml-file):
+
+```yml
+package:
+  stage: Package
+  image:
+    name: 3liz/qgis-plugin-ci:1.8.4
+  script:
+    - package ${CI_COMMIT_REF_NAME} --allow-uncommitted-changes --plugin-repo-url https://custom.server.url/
+```
 
 ### Transifex
 
@@ -22,10 +37,11 @@ You can comment the transifex/lrelease command in the dockerfile.
 
 ### Upgrade
 
-Change versions in `Dockerfile` and `Makefile`.
+Change version in the `Makefile` according to a tag available on
+[pypi.org](https://pypi.org/project/qgis-plugin-ci/#history)
 
 ### Source code
 
-Based on :
+Based on QGIS-Plugin-CI:
 * Pypi : https://pypi.org/project/qgis-plugin-ci/
 * GitHub : https://github.com/opengisch/qgis-plugin-ci
