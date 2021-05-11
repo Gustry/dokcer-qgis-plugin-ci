@@ -3,6 +3,8 @@
 Documentation of [QGIS-Plugin-CI](https://opengisch.github.io/qgis-plugin-ci/).
 This docker project is just a docker image on top of this Python project.
 
+Images are available on [Docker Hub](https://hub.docker.com/r/3liz/qgis-plugin-ci)
+
 Example to generate the package and get the custom `plugins.xml` file :
 
 Using plain `docker run` command :
