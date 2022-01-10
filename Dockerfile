@@ -4,7 +4,7 @@ ARG VERSION
 RUN apt-get update && apt-get -y install git libglib2.0-0
 
 # Needed for lrelease if plugin is using a transifex token
-RUN apt-get -y install qt5-default qttools5-dev-tools
+RUN apt-get -y install qttools5-dev-tools
 
 RUN pip install qgis-plugin-ci==$VERSION
 # RUN pip install git+https://github.com/Gustry/qgis-plugin-ci.git
