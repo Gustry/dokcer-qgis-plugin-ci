@@ -13,7 +13,7 @@ docker run
   --rm -w /plugin
   -v ${CI_PROJECT_DIR}:/plugin
   -u $(id -u):$(id -g)
-  3liz/qgis-plugin-ci:1.8.4
+  3liz/qgis-plugin-ci:2.1.1
   package ${CI_COMMIT_REF_NAME}
   --allow-uncommitted-changes
   --plugin-repo-url https://custom.server.url/
@@ -27,7 +27,7 @@ Or using `image` from GitLab-ci, [doc](https://docs.gitlab.com/ee/ci/docker/usin
 package:
   stage: Package
   image:
-    name: 3liz/qgis-plugin-ci:1.8.4
+    name: 3liz/qgis-plugin-ci:2.1.1
   script:
     - package ${CI_COMMIT_REF_NAME} --allow-uncommitted-changes --plugin-repo-url https://custom.server.url/
 ```
