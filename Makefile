@@ -1,4 +1,4 @@
-VERSION = 2.3.0
+VERSION = 2.4.0
 
 all: build push
 
@@ -10,3 +10,4 @@ build:
 push:
 	@docker push 3liz/qgis-plugin-ci:${VERSION}
 	@docker push 3liz/qgis-plugin-ci:latest
+	@echo Visit https://hub.docker.com/r/3liz/qgis-plugin-ci/tags
