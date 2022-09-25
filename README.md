@@ -1,5 +1,8 @@
 ### Docker image for QGIS-Plugin-CI
 
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/3liz/qgis-plugin-ci)](https://hub.docker.com/r/3liz/qgis-plugin-ci)
+[![Docker Pulls](https://img.shields.io/docker/pulls/3liz/qgis-plugin-ci)](https://hub.docker.com/r/3liz/qgis-plugin-ci)
+
 Documentation of [QGIS-Plugin-CI](https://opengisch.github.io/qgis-plugin-ci/).
 This docker project is just a docker image on top of this Python project.
 
