@@ -17,7 +17,7 @@ docker run
   -v ${CI_PROJECT_DIR}:/plugin
   -u $(id -u):$(id -g)
   3liz/qgis-plugin-ci:2.1.1
-  package ${CI_COMMIT_REF_NAME}
+  qgis-plugin-ci package ${CI_COMMIT_REF_NAME}
   --allow-uncommitted-changes
   --plugin-repo-url https://custom.server.url/
 ```

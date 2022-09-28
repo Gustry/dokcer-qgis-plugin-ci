@@ -12,5 +12,4 @@ RUN pip install qgis-plugin-ci==$VERSION
 # RUN pip install /qgis-plugin-ci
 
 COPY gitconfig /etc/gitconfig
-
-ENTRYPOINT ["qgis-plugin-ci"]
+CMD ["bash"]
