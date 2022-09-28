@@ -1,0 +1,13 @@
+stages:
+- build
+
+qgis-plugin-ci:
+  stage: build
+  only:
+    refs:
+      - tags
+      - master
+  script:
+    - make build push-infra
+  tags:
+    - factory-dind

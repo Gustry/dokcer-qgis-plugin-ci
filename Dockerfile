@@ -1,4 +1,5 @@
-FROM python:3.9-slim
+ARG REGISTRY_PREFIX=''
+FROM ${REGISTRY_PREFIX}python:3.9-slim
 ARG VERSION
 
 RUN apt-get update && apt-get -y install git libglib2.0-0
