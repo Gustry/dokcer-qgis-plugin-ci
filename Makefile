@@ -1,4 +1,4 @@
-VERSION = 2.5.1
+VERSION=2.5.1
 
 ifdef REGISTRY_URL
 REGISTRY_PREFIX=$(REGISTRY_URL)/
@@ -18,7 +18,7 @@ push:
 	@echo Visit https://hub.docker.com/r/3liz/qgis-plugin-ci/tags
 
 push-infra:
-	@docker tag 3liz/qgis-plugin-ci:$VERSION ${REGISTRY_URL}/qgis-plugin-ci:$VERSION
-	@docker push ${REGISTRY_URL}/qgis-plugin-ci:$VERSION
-	@docker tag 3liz/qgis-plugin-ci:$VERSION ${REGISTRY_URL}/qgis-plugin-ci:latest
+	@docker tag 3liz/qgis-plugin-ci:${VERSION} ${REGISTRY_URL}/qgis-plugin-ci:${VERSION}
+	@docker push ${REGISTRY_URL}/qgis-plugin-ci:${VERSION}
+	@docker tag 3liz/qgis-plugin-ci:${VERSION} ${REGISTRY_URL}/qgis-plugin-ci:latest
 	@docker push ${REGISTRY_URL}/qgis-plugin-ci:latest
