@@ -1,11 +1,11 @@
 ARG REGISTRY_PREFIX=''
-FROM ${REGISTRY_PREFIX}python:3.9-slim
+FROM ${REGISTRY_PREFIX}python:3.10-slim
 ARG VERSION
 
 RUN apt-get update && apt-get -y install git libglib2.0-0
 
 # Needed for lrelease if plugin is using a transifex token
-RUN apt-get -y install qttools5-dev-tools
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install qttools5-dev-tools
 RUN pip install --upgrade pip
 RUN pip install qgis-plugin-ci==$VERSION
 # RUN pip install git+https://github.com/Gustry/qgis-plugin-ci.git
